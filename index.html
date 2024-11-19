@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Form</title>
+</head>
+<body>
+  <h1>Welcome to My Form</h1>
+  <p>Did you choose our product?</p>
+
+  <!-- Form for "Yes" response -->
+  <form action="https://heroic-strudel-e43d14.netlify.app/.netlify/functions/submit-response" method="POST">
+    <input type="hidden" name="response" value="Yes">
+    <button type="submit">Yes</button>
+  </form>
+
+  <!-- Form for "No" response -->
+  <form action="https://heroic-strudel-e43d14.netlify.app/.netlify/functions/submit-response" method="POST">
+    <input type="hidden" name="response" value="No">
+    <button type="submit">No</button>
+  </form>
+
+  <!-- Form for "Still Deciding" response -->
+  <form action="https://heroic-strudel-e43d14.netlify.app/.netlify/functions/submit-response" method="POST">
+    <input type="hidden" name="response" value="Still Deciding">
+    <button type="submit">Still Deciding</button>
+  </form>
+
+</body>
+</html>

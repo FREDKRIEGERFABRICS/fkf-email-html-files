@@ -2,13 +2,16 @@ const qs = require('querystring');
 
 exports.handler = async (event, context) => {
   try {
+    // Log the raw event body to see the incoming data
+    console.log('Raw event body:', event.body);
+
     // Parse the body from the form submission
     const data = qs.parse(event.body);
 
     // Get the response from the form
     const response = data.response;
 
-    // Log or use the response data as needed
+    // Log the parsed response data
     console.log('Form response:', response);
 
     // Here you could save or process the response if needed (e.g., save to a database)

@@ -5,7 +5,7 @@ exports.handler = async function(event, context) {
   const { response, user_id, project } = event.queryStringParameters;
 
   // Define your Google Apps Script URL (replace with your actual URL)
-  const googleAppsScriptUrl = "https://script.google.com/macros/s/YOUR_SCRIPT_URL/exec";
+  const googleAppsScriptUrl = "https://script.google.com/macros/s/AKfycbwkHwTXsd8SWGhPU8LEgFTVsgt7_J1lwd6nSYDXNoI2t9_F_BQuNtHQupKSTV59TqwY/exec";
 
   // Create the payload to send to Google Apps Script
   const payload = new URLSearchParams();

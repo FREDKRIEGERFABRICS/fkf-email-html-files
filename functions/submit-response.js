@@ -2,27 +2,23 @@ const qs = require('querystring');
 
 exports.handler = async (event, context) => {
   try {
-    // Log the raw event body to see the incoming data
+    // Log the raw event body and query string
     console.log('Raw event body:', event.body);
+    console.log('Query string:', event.queryStringParameters);
 
-    // Parse the body from the form submission
-    const data = qs.parse(event.body);
+    // Get the response from query string (for GET requests)
+    const response = event.queryStringParameters.response;
 
-    // Get the response from the form
-    const response = data.response;
-
-    // Log the parsed response data
+    // Log the parsed response
     console.log('Form response:', response);
 
-    // Here you could save or process the response if needed (e.g., save to a database)
-
-    // Redirect to the thank-you page after successful form submission
+    // Redirect to the thank-you page after successful submission
     return {
-      statusCode: 302,  // 302 is for redirection
+      statusCode: 302, // 302 is for redirection
       headers: {
-        Location: "https://www.fredkriegerfabrics.com/thank-you-page-1",  // Your custom thank-you page URL
+        Location: "https://www.fredkriegerfabrics.com/thank-you-page-1", // Your custom thank-you page URL
       },
-      body: JSON.stringify({ message: 'Redirecting...' }),  // Optional message in case something goes wrong
+      body: JSON.stringify({ message: 'Redirecting...' }),
     };
   } catch (error) {
     // Log and return an error if something goes wrong

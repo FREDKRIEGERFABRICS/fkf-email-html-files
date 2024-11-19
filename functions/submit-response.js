@@ -11,10 +11,15 @@ exports.handler = async (event, context) => {
     // Log or use the response data as needed
     console.log('Form response:', response);
 
-    // Return a success message
+    // Here you could save or process the response if needed (e.g., save to a database)
+
+    // Redirect to the thank-you page after successful form submission
     return {
-      statusCode: 200,
-      body: JSON.stringify({ message: 'Response received' }),
+      statusCode: 302,  // 302 is for redirection
+      headers: {
+        Location: "https://www.fredkriegerfabrics.com/thank-you-page-1",  // Your custom thank-you page URL
+      },
+      body: JSON.stringify({ message: 'Redirecting...' }),  // Optional message in case something goes wrong
     };
   } catch (error) {
     // Log and return an error if something goes wrong

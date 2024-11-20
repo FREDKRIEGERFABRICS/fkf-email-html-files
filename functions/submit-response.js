@@ -39,8 +39,10 @@ exports.handler = async function(event, context) {
     // Check if the request was successful
     if (googleResponse.ok) {
       return {
-        statusCode: 200,
-        body: "Success!",
+        statusCode: 302, // 302 status code for redirection
+        headers: {
+          Location: "https://www.fredkriegerfabrics.com/thank-you-page-1", // URL for your thank-you page
+        },
       };
     } else {
       return {

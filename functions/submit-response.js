@@ -1,6 +1,7 @@
-const fetch = require("node-fetch");
-
 exports.handler = async function(event, context) {
+  // Dynamically import 'node-fetch' (ES Module workaround)
+  const fetch = (await import('node-fetch')).default;
+
   // Get the query parameters from the URL
   const { response, user_id, project } = event.queryStringParameters;
 
